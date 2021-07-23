@@ -1,0 +1,6 @@
+.sub-nav-item{
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-right: 0.5rem;
+}
