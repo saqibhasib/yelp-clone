@@ -30,6 +30,7 @@ export function SearchBar(props) {
                     </span>
                 </button>
             </div>
+            
         </div>
     );
 }
