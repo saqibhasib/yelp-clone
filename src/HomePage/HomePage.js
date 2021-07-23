@@ -8,11 +8,14 @@ import styles from "./HomePage.module.css";
 
 export function HomePage() {
     return (
-        <div>
-            <NavBar/>
-            <img src={logo} className={styles.logo} alt="logo"/>
-            <SearchBar/>
-            <SearchSuggestion/>
+        <div className={styles["home"]}>
+            <div className={styles["search-area"]}>
+                <NavBar/>
+                <img src={logo} className={styles.logo} alt="logo"/>
+                <SearchBar/>
+                <SearchSuggestion/>
+            </div>
         </div>
+        
     );
 };
