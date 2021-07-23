@@ -1,7 +1,10 @@
 import React from 'react';
+import { NavBarMain } from '../NavBarMain/NavBarMain';
 
 export function Search(){
     return(
-        <div>search</div>
+        <div>
+            <NavBarMain/>
+        </div>
     );
 }

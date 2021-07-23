@@ -1,0 +1,18 @@
+.nav-bar {
+    display: flex;
+    background: rgb(255, 171, 102);
+
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 75px;
+    margin-right: 1rem;
+}
+
+:global(.button).nav-button {
+    margin-left: 1rem;
+}
