@@ -4,13 +4,15 @@ import { SearchBar } from '../SearchBar/SearchBar';
 import styles from './NavBarMain.module.css';
 import { Link } from 'react-router-dom';
 
-export function NavBarMain(){
+export function NavBarMain(props){
+   
+
     return(
         <div className={styles['nav-bar']}>
             <Link to='/'>
                 <img src={logo} className={styles.logo} alt="logo"/>
             </Link>
-            <SearchBar small/>
+            <SearchBar small term={props.term} location={props.location}/>
             
             <button className={`button ${styles['nav-button']}`}>Sign In</button>
             <button className={`button ${styles['nav-button']}`}>Register</button>

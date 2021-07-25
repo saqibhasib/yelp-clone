@@ -10,7 +10,7 @@ export function SearchBar(props) {
         if(typeof props.search === 'function'){
             props.search(term, location);
         }
-        console.log(term,location);
+        // console.log(term,location);
         e.preventDefault();
     }
 
@@ -28,6 +28,7 @@ export function SearchBar(props) {
                     <input className={`input ${sizeClass} ${styles['input-control']}`} 
                             onChange={(e)=> setTerm(e.target.value)}
                             type="text" 
+                            value={term}
                             placeholder="restaurants, movers ..."/>
                 </p>
                 <div className="control">
@@ -39,6 +40,7 @@ export function SearchBar(props) {
                     <input className={`input ${sizeClass} ${styles['input-control']}`} 
                             onChange={(e)=> setLocation(e.target.value)}
                             type="text" 
+                            value={location}
                             placeholder="Where"/>
                 </p>
                 <button className={`button ${sizeClass} ${styles["search-button"]}`} onClick={submit}>
