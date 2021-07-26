@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# API (Bearer token) to move to backend
+/src/hooks/yelp-api/config.js
