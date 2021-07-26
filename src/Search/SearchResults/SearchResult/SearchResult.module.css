@@ -20,3 +20,7 @@
 .contact-info p {
     font-size: .75rem;
 }
+
+:global(.tag).tag-custom {
+   margin-right: .2rem;
+}

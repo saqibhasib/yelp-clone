@@ -2,19 +2,34 @@ import React from 'react';
 import { BusinessRating } from '../../../BusinessRating/BusinessRating';
 import styles from './SearchResult.module.css';
 
-export function SearchResult(){
+export function SearchResult(props){
+    if(!props.business){
+        return(<div></div>);
+    }
+    
+    const displayDetail = props.business.phone ? 
+                            (<div>
+                                <p>{props.business.phone}</p>
+                                <p>{props.business.location.address1}</p>
+                                <p>{props.business.location.city}</p>
+                            </div>) : 
+                            (<div>
+                                <p>{props.business.location.address1}</p>
+                                <p>{props.business.location.city}</p>
+                            </div>);
+
+    const categories = props.business.categories.map(cat=><span className={`tag ${styles['tag-custom']}`}>{cat.title}</span>);
+
     return(
         <div className={styles['search-result']}>
-            <img className={styles['business-image']} src='https://via.placeholder.com/200' alt='business'/>
+            <img className={styles['business-image']} src={props.business.image_url} alt='business'/>
             <div className={styles['business-info']}>
-                <h2 className='subtitle'><strong>Title</strong></h2>
-                <BusinessRating/>
-                <p>$$ <span className="tag">Pizza</span></p>
+                <h2 className='subtitle'><strong>{props.business.name}</strong></h2>
+                <BusinessRating reviewCount={props.business.review_count} rating={props.business.rating}/>
+                <p>{props.business.price} {categories}</p>
             </div>
             <div className={styles['contact-info']}>
-                <p>+123456789</p>
-                <p>123 That street</p>
-                <p>Porters Lake</p>
+                {displayDetail}
             </div>
         </div>
     );
