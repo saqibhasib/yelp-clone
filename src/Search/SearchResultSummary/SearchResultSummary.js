@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import styles from './SearchResultSummary.module.css';
 
 export function SearchResultSummary(props) {
-
+    let resultStats = null;
+    if(props.amountResults && props.shownResults){
+        resultStats = <p>Showing 1-{props.shownResults} out of {props.amountResults} results</p>
+    };
     return(
         <div className={styles.container}>
             <div className={styles['search-summary']}>
                 <h1 className='subtitle'><strong>{props.term || 'Businesses'}</strong> in {props.location}</h1>
-                <p>Showing 1-20 out of 500 results</p>
+                {resultStats}
             </div>
             <div className={styles.filters}>
                 <button className={`button ${styles['subnav-button']}`}>
