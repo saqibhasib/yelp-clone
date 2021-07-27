@@ -9,14 +9,21 @@ import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
 
 export function Search(props){
     const location = useLocation();
+    const history = useHistory();
     const params = new URLSearchParams(location.search);
     const term = params.get('find_desc');
     const locationParam = params.get('find_loc');
     const [businesses, amountResults, searchParams, setSearchParams] = useBusinessSearch(term, locationParam);
 
+    if(!term || !locationParam){
+        history.push('/');
+    }
+
     function search(term, location){
+        const encodedTerm = encodeURI(term);
+        const encodedLocation = encodeURI(location);
+        history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}`);
         setSearchParams({term, location});
-        console.log("search.js");
     };
     
 
