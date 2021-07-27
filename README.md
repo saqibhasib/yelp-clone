@@ -1,7 +1,10 @@
-# Yelp clone
-A clone of popular site - Yelp, using JavaScript library - ReactJS.
+# Yellow: Yelp search app
+A simple search app for finding businesses in an area, using JavaScript library - ReactJS.
 - Implemented React hooks to dynamically display results from search.
 - Used Yelp Fusion API to show results from Yelp database of businesses based on user search.
+
+# Demo:
+[![Yellow](https://raw.githubusercontent.com/saqibhasib/yelp-clone-frontend/master/src/assets/demo-yellow.gif)]
 
 ## Technologies used:
 - JavaScript, ReactJS
