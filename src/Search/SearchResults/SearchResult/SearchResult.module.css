@@ -24,3 +24,7 @@
 :global(.tag).tag-custom {
    margin-right: .2rem;
 }
+
+.boxbox{
+    margin-left: 0;
+}

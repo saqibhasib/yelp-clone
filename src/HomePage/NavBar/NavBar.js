@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Login } from "../../auth/Login/Login";
 import styles from './NavBar.module.css';
 
 export function NavBar() {
@@ -9,8 +11,12 @@ export function NavBar() {
                 <span>Events</span>
             </div>
             <div className={styles.right}>
-                <span>Login</span>
-                <button className="button">Sign up</button>
+                <Link to='/login'>
+                    <span className="button">Login</span>
+                </Link>
+                <Link to='/signup'>
+                    <span className="button">Sign up</span>
+                </Link>
             </div>
         </div>
     );
